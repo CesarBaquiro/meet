@@ -4,3 +4,8 @@
     Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
     "Segoe UI Symbol";
 }
+
+body {
+  margin: 0;
+  /* overflow: hidden; Eliminar las barras*/
+}
