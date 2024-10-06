@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class RouletteComponent implements OnInit {
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
-  private slices: string[] = [ 'VERDAD', 'RETO', 'CACHETADA', 'SHOT'];
-  private colors: string[] = ['#308F84', '#29427A', '#308F84', '#29427A'];
+  private slices: string[] = [ 'DESCUENTO', 'RETO', 'VERDAD', 'SEGUIRNOS'];
+  private colors: string[] = ['#8889A2', '#DBDBE2', '#8889A2', '#DBDBE2'];
   private startAngle = 0;
   private spinAngle = 0;
   private spinTimeout: any;
@@ -24,45 +24,50 @@ export class RouletteComponent implements OnInit {
   }
 
   drawRoulette() {
-  if (!this.ctx) return;
-
-  const radius = this.canvas!.width / 2;
-  const arcSize = (2 * Math.PI) / this.slices.length;
-
-  this.ctx.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
-
-  this.slices.forEach((slice, i) => {
-    const angle = this.startAngle + i * arcSize;
-    
-    // Dibuja los segmentos de la ruleta
-    this.ctx.beginPath();
-    this.ctx.moveTo(radius, radius);
-    this.ctx.arc(radius, radius, radius, angle, angle + arcSize);
-    this.ctx.fillStyle = this.colors[i % this.colors.length];
-    this.ctx.fill();
-
-    // Cambia el color del borde a #244E6B
-    this.ctx.strokeStyle = '#244E6B';  // Color del borde
-    this.ctx.stroke();
-
-    // Dibuja el texto en el centro de cada segmento sin rotación
-    this.ctx.save();
-    this.ctx.translate(radius, radius);  // Mueve el contexto al centro de la ruleta
-    
-    // Posiciona el texto en el borde externo del segmento, siempre horizontal
-    const textX = Math.cos(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje X
-    const textY = Math.sin(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje Y
-
-    this.ctx.fillStyle = '#fff';
-    this.ctx.font = 'bold 16px Arial';
-    this.ctx.textAlign = 'center';
-    this.ctx.fillText(slice, textX, textY);  // Texto siempre horizontal
-    
-    this.ctx.restore();
-  });
-
-  this.drawPointer();  // Llamamos al puntero
-}
+    if (!this.ctx) return;
+  
+    const radius = this.canvas!.width / 2;
+    const arcSize = (2 * Math.PI) / this.slices.length;
+  
+    // Colores predefinidos para los textos de los segmentos
+    const textColors = ['#DBDBE2', '#8889A2', '#DBDBE2', '#8889A2', '#E74C3C'];  // Puedes agregar más colores si tienes más segmentos
+  
+    this.ctx.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
+  
+    this.slices.forEach((slice, i) => {
+      const angle = this.startAngle + i * arcSize;
+      
+      // Dibuja los segmentos de la ruleta
+      this.ctx.beginPath();
+      this.ctx.moveTo(radius, radius);
+      this.ctx.arc(radius, radius, radius, angle, angle + arcSize);
+      this.ctx.fillStyle = this.colors[i % this.colors.length];
+      this.ctx.fill();
+  
+      // Cambia el color del borde a #244E6B
+      this.ctx.strokeStyle = '#244E6B';  // Color del borde
+      this.ctx.stroke();
+  
+      // Dibuja el texto en el centro de cada segmento sin rotación
+      this.ctx.save();
+      this.ctx.translate(radius, radius);  // Mueve el contexto al centro de la ruleta
+      
+      // Posiciona el texto en el borde externo del segmento
+      const textX = Math.cos(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje X
+      const textY = Math.sin(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje Y
+  
+      // Asigna un color específico al texto de cada segmento
+      this.ctx.fillStyle = textColors[i % textColors.length];  // Cicla entre los colores definidos
+      this.ctx.font = 'bold 16px Arial';
+      this.ctx.textAlign = 'center';
+      this.ctx.fillText(slice, textX, textY);  // Texto siempre horizontal
+      
+      this.ctx.restore();
+    });
+  
+    this.drawPointer();  // Llamamos al puntero
+  }
+  
 
   
 

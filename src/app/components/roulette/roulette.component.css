@@ -1,13 +1,14 @@
 .roulette-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  canvas {
-    border: 5px solid #333;
-    border-radius: 50%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Colocar un borde a la ruleta
+canvas {
+  border: 5px solid #ffffff; 
+   border-radius: 50%;
+}
+*/
