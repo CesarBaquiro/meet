@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RouletteComponent } from './components/roulette/roulette.component';
 import { RouletteTitleComponent } from './components/roulette-title/roulette-title.component';
 
+
 const appRoutes: Routes = [
+  
   { path: 'ruleta', component: RouletteComponent },
 ];
 

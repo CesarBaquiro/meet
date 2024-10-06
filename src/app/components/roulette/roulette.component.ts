@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RouletteComponent implements OnInit {
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
-  private slices: string[] = [ 'DESCUENTO', 'RETO', 'VERDAD', 'SEGUIRNOS'];
+  private slices: string[] = [ 'DESCUENTO', 'RETO', 'DULCE', 'SEGUIRNOS'];
   private colors: string[] = ['#8889A2', '#DBDBE2', '#8889A2', '#DBDBE2'];
   private startAngle = 0;
   private spinAngle = 0;
@@ -84,7 +84,7 @@ export class RouletteComponent implements OnInit {
     this.ctx.lineTo(radius, 25);        // Punto inferior de la flecha (5px por encima del borde superior)
     
     this.ctx.closePath();
-    this.ctx.fillStyle = '#8E2F36';  // Color de la flecha
+    this.ctx.fillStyle = '#d72d21';  // Color de la flecha
     this.ctx.fill();
   }
 
@@ -98,11 +98,11 @@ export class RouletteComponent implements OnInit {
 
   animateSpin() {
     this.startAngle += this.spinAngle;
-    this.spinAngle *= 0.97;  // Gradually slow down
+    this.spinAngle *= 0.98;  // Gradually slow down
     this.drawRoulette();
 
     if (this.spinAngle > 0.1) {
-      this.spinTimeout = setTimeout(() => this.animateSpin(), 20);
+      this.spinTimeout = setTimeout(() => this.animateSpin(), 12);
     }
   }
 }
