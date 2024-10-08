@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class RouletteComponent implements OnInit {
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
-  private slices: string[] = [ 'DESCUENTO', 'RETO', 'DULCE', 'SEGUIRNOS'];
-  private colors: string[] = ['#8889A2', '#DBDBE2', '#8889A2', '#DBDBE2'];
+  private slices: string[] = [ 'TICKET', 'RETO', 'DULCE', 'SEGUIRNOS'];
+  private colors: string[] = ['#F89B04', '#DBDBE2', '#8889A2', '#DBDBE2'];
   private startAngle = 0;
   private spinAngle = 0;
   private spinTimeout: any;
@@ -30,7 +30,7 @@ export class RouletteComponent implements OnInit {
     const arcSize = (2 * Math.PI) / this.slices.length;
   
     // Colores predefinidos para los textos de los segmentos
-    const textColors = ['#DBDBE2', '#8889A2', '#DBDBE2', '#8889A2', '#E74C3C'];  // Puedes agregar más colores si tienes más segmentos
+    const textColors = ['#FFFFFF', '#8889A2', '#DBDBE2', '#8889A2', '#E74C3C'];  // Puedes agregar más colores si tienes más segmentos
   
     this.ctx.clearRect(0, 0, this.canvas!.width, this.canvas!.height);
   
