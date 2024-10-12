@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class RouletteComponent implements OnInit {
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
-  private slices: string[] = [ 'TICKET', 'RETO', 'DULCE', 'SEGUIRNOS'];
+  private slices: string[] = [ 'SHOT', 'VERDAD O RETO', 'CACHETADA', 'BESO'];
   private colors: string[] = ['#F89B04', '#DBDBE2', '#8889A2', '#DBDBE2'];
   private startAngle = 0;
   private spinAngle = 0;
@@ -53,8 +53,8 @@ export class RouletteComponent implements OnInit {
       this.ctx.translate(radius, radius);  // Mueve el contexto al centro de la ruleta
       
       // Posiciona el texto en el borde externo del segmento
-      const textX = Math.cos(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje X
-      const textY = Math.sin(angle + arcSize / 2) * (radius * 0.65);  // Posición en el eje Y
+      const textX = Math.cos(angle + arcSize / 2) * (radius * 0.60);  // Posición en el eje X
+      const textY = Math.sin(angle + arcSize / 2) * (radius * 0.55);  // Posición en el eje Y
   
       // Asigna un color específico al texto de cada segmento
       this.ctx.fillStyle = textColors[i % textColors.length];  // Cicla entre los colores definidos
@@ -68,9 +68,6 @@ export class RouletteComponent implements OnInit {
     this.drawPointer();  // Llamamos al puntero
   }
   
-
-  
-
   drawPointer() {
     if (!this.ctx) return;
   
@@ -92,13 +89,13 @@ export class RouletteComponent implements OnInit {
     if (this.spinTimeout) {
       clearTimeout(this.spinTimeout);
     }
-    this.spinAngle = Math.random() * 10 + 10;  // Set random spin speed
+    this.spinAngle = Math.random() *  8;  // Set random spin speed
     this.animateSpin();
   }
 
   animateSpin() {
     this.startAngle += this.spinAngle;
-    this.spinAngle *= 0.98;  // Gradually slow down
+    this.spinAngle *= 0.97;  // Gradually slow down
     this.drawRoulette();
 
     if (this.spinAngle > 0.1) {

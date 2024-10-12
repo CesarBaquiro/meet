@@ -1,5 +1,7 @@
-*{margin: 0;}
+*{margin: 0;
+padding: 0;}
 
 body {
   background: linear-gradient(35deg, rgb(25, 47, 78) 0%, rgb(60, 28, 90) 50%, rgba(0,0,0,1) 100%);
+  
 }

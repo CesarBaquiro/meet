@@ -1,0 +1,32 @@
+/* Estilos para la banda */
+.adsBanner {
+    width: 100%;             /* Ocupa todo el ancho */
+    background-color: #1a1a1a; /* Fondo del banner (puedes cambiar el color) */
+    overflow: hidden;         /* Esconde el texto que sale del área visible */
+    white-space: nowrap;      /* Evita que el texto se ajuste en varias líneas */
+    position: relative;       /* Para poder mover el texto */
+    height: 50px;             /* Altura de la banda */
+    display: flex;
+    align-items: center;      /* Centra el texto verticalmente */
+  }
+  
+  /* Estilos para el texto que se desplaza */
+  .scrolling-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    white-space: nowrap;
+    animation: scroll-text 10s linear infinite;  /* Animación que se repite infinitamente */
+  }
+  
+  /* Definición de la animación */
+  @keyframes scroll-text {
+    0% {
+      left: 105%;    /* Inicia fuera del contenedor, a la derecha */
+    }
+    100% {
+      left: -190%;   /* Termina fuera del contenedor, a la izquierda */
+    }
+  }
+  
