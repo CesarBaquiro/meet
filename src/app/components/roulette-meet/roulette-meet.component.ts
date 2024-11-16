@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-roulette',
-  templateUrl: './roulette.component.html',
-  styleUrls: ['./roulette.component.css']
+  templateUrl: './roulette-meet.component.html',
+  styleUrls: ['./roulette-meet.component.css']
 })
-export class RouletteComponent implements OnInit {
+export class RouletteMeetComponent implements OnInit {
   private canvas: HTMLCanvasElement | null = null;
   private ctx: CanvasRenderingContext2D | null = null;
   private slices: string[] = [ 'SHOT', 'VERDAD O RETO', 'CACHETADA', 'BESO'];

@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
-import { RouletteComponent } from './components/roulette/roulette.component';
+import { RouletteMeetComponent } from './components/roulette-meet/roulette-meet.component';
 import { RouletteTitleComponent } from './components/roulette-title/roulette-title.component';
 import { AdsBandComponent } from './components/ads-band/ads-band.component';
+import { RoulettesMenuComponent } from './components/roulettes-menu/roulettes-menu.component';
+import { RouletteProhibitedComponent } from './components/roulette-prohibited/roulette-prohibited.component';
 
 
 const appRoutes: Routes = [
   
-  { path: 'ruleta', component: RouletteComponent },
+  { path: 'ruletas', component: RoulettesMenuComponent },
+  { path: 'ruletas/ruleta-arriesgados', component: RouletteMeetComponent },
+  { path: 'ruletas/ruleta-prohibidos', component: RouletteProhibitedComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, NavBarComponent, RouletteComponent, RouletteTitleComponent, AdsBandComponent],
+  declarations: [AppComponent, NavBarComponent, RouletteMeetComponent, RouletteTitleComponent, AdsBandComponent, RoulettesMenuComponent, RouletteProhibitedComponent],
   imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
