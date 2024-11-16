@@ -15,9 +15,9 @@ import { RouletteProhibitedComponent } from './components/roulette-prohibited/ro
 
 const appRoutes: Routes = [
   
-  { path: 'ruletas', component: RoulettesMenuComponent },
-  { path: 'ruletas/ruleta-arriesgados', component: RouletteMeetComponent },
-  { path: 'ruletas/ruleta-prohibidos', component: RouletteProhibitedComponent },
+  { path: 'ruleta', component: RoulettesMenuComponent },
+  { path: 'ruleta/arriesgados', component: RouletteMeetComponent },
+  { path: 'ruleta/prohibidos', component: RouletteProhibitedComponent },
 ];
 
 @NgModule({
