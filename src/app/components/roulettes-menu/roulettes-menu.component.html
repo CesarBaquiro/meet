@@ -1,24 +1,50 @@
-<div class="container mt-4">
-    <h1 class="text-center">Selecciona una Ruleta</h1>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">Ruleta Arriesgados</h5>
-            <p class="card-text">Explora desafíos atrevidos y emocionantes con esta ruleta.</p>
-            <a routerLink="/ruletas/ruleta-arriesgados" class="btn btn-primary">Jugar</a>
-          </div>
+<div class="container mt-5">
+  <h1 class="custom-header text-center mb-5">Selecciona una Ruleta</h1>
+
+  <div class="row g-4">
+    <!-- Card Ruleta Arriesgados -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg border-0 rounded-4">
+        <!-- Imagen de la tarjeta -->
+        <img
+          src="../../../assets/cards_imgs/risky.png"
+          class="card-img-top rounded-top-4"
+          alt="Ruleta Arriesgados"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold text-primary">🎉 Ruleta Arriesgados</h5>
+          <p class="card-text">Haga el ambiente, pa' que esperar!</p>
+          <a
+            routerLink="/ruleta/arriesgados"
+            class="btn btn-outline-primary btn-lg px-4"
+          >
+            Jugar
+          </a>
         </div>
       </div>
-      <div class="col-md-6 mb-4">
-        <div class="card h-100">
-          <div class="card-body text-center">
-            <h5 class="card-title">Ruleta Prohibidos</h5>
-            <p class="card-text">Descubre preguntas y retos para los más atrevidos.</p>
-            <a routerLink="/ruletas/ruleta-prohibidos" class="btn btn-danger">Jugar</a>
-          </div>
+    </div>
+    <!-- Card Ruleta Prohibidos -->
+    <div class="col-md-6">
+      <div class="card h-100 shadow-lg border-0 rounded-4">
+        <!-- Imagen de la tarjeta -->
+        <img
+          src="../../../assets/cards_imgs/prohibited.png"
+          class="card-img-top rounded-top-4"
+          alt="Ruleta Prohibidos"
+        />
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold text-danger">🚫 Ruleta Prohibidos</h5>
+          <p class="card-text">
+            Siempre hay un parcero cuando llega es porque esto se daño
+          </p>
+          <a
+            routerLink="/ruleta/prohibidos"
+            class="btn btn-outline-danger btn-lg px-4"
+          >
+            Jugar
+          </a>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
