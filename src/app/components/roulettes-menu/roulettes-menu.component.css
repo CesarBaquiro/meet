@@ -1,0 +1,13 @@
+.container {
+    padding-top: 20px;
+  }
+  
+  .card {
+    border: 1px solid #244E6B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-title {
+    color: #244E6B;
+  }
+  
